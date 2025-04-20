@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { blocksStore } from '@/stores/blocks'
+
+const { newBlock, saveLocally } = blocksStore()
+</script>
 
 <template>
   <div class="container">
@@ -6,8 +10,8 @@
       <h1>Quick Note</h1>
     </div>
     <div class="actions">
-      <button class="action-btn">+ New Block</button>
-      <button class="action-btn">💾 Save All</button>
+      <button class="action-btn" @click="newBlock">+ New Block</button>
+      <button class="action-btn" @click="saveLocally">💾 Save All</button>
       <button class="action-btn">⇧ Import</button>
       <button class="action-btn">⇩ Export</button>
     </div>

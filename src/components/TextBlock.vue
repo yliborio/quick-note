@@ -1,21 +1,47 @@
 <script setup lang="ts">
+import { blocksStore } from '@/stores/blocks'
+
 defineProps({
   title: {
     type: String,
     default: '',
   },
+  content: {
+    type: String,
+    default: '',
+  },
+  id: {
+    type: Number,
+    default: '',
+  },
 })
 
-const emit = defineEmits(['update:modelValue'])
+const { deleteBlock, updateBlock } = blocksStore()
+
+const y = defineEmits(['update:content'])
 </script>
 
 <template>
   <div class="text-block">
     <div class="text-block__header">
-      <input type="text" class="text-block__title" :placeholder="title" />
-      <button class="delete-btn">🗑</button>
+      <input
+        type="text"
+        class="text-block__title"
+        placeholder="Note #"
+        :value="title"
+        @change="updateBlock(id, ($event.target as HTMLInputElement).value, content)"
+      />
+      <button class="delete-btn" @click="deleteBlock(id)">🗑</button>
     </div>
-    <textarea type="text" class="text-block__input" rows="1" resize="none"></textarea>
+    <textarea
+      type="text"
+      class="text-block__input"
+      rows="1"
+      resize="none"
+      placeholder="Write your note here..."
+      @change="updateBlock(id, title, ($event.target as HTMLInputElement).value)"
+      :value="content"
+    ></textarea>
   </div>
 </template>
 
@@ -24,7 +50,9 @@ const emit = defineEmits(['update:modelValue'])
   background-color: #f9f9f9;
   box-sizing: border-box;
   width: fit-content;
-  height: auto;
+  min-height: 150px;
+  max-height: 250px;
+  height: 150px;
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -58,7 +86,8 @@ const emit = defineEmits(['update:modelValue'])
 .text-block__input {
   min-width: 100%;
   padding: 0rem 0.5rem;
-  height: 100%;
+  height: 55%;
+  max-height: 55%;
   font-size: 1rem;
   font-family: 'VT323', monospace;
   background: transparent;
@@ -69,7 +98,6 @@ const emit = defineEmits(['update:modelValue'])
 }
 
 .text-block__title::placeholder {
-  color: #fff;
   font-style: italic;
 }
 

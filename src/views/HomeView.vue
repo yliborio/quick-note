@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TextBlock from './../components/TextBlock.vue'
+import BlocksGrid from '@/components/BlocksGrid.vue'
 </script>
 
 <template>
   <main>
-    <TextBlock title="New Text" />
+    <BlocksGrid />
   </main>
 </template>

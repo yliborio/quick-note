@@ -28,7 +28,7 @@ const { newBlock, saveLocally } = blocksStore()
   border: 3px dashed #ccc;
 
   background-color: #f0f0f0;
-  width: 100%;
+  width: 100vw;
 }
 
 h1 {

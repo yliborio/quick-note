@@ -1,20 +1,27 @@
-# quick-note
+# Quick Note
 
-This template should help get you started developing with Vue 3 in Vite.
+Quick Note is a simple Vue.js application that allows you to create, edit, and delete small text blocks with a title and content. The application saves your notes locally in your browser's local storage and is accessible via GitHub Pages.
+
+## Live Demo
+
+You can access the live version of the app here: [Quick Note](https://yliborio.github.io/quick-note/)
+
+## Features
+
+- Create text blocks with a title and content.
+- Edit existing text blocks.
+- Delete text blocks.
+- Automatically saves your notes in local storage for persistence.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [VSCode](https://code.visualstudio.com/)
 
 ## Project Setup
+
+To set up the project locally, follow these steps:
+
+### Install Dependencies
 
 ```sh
 npm install
@@ -26,20 +33,15 @@ npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Type-Check, Compile, and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Deployment
 
-```sh
-npm run test:unit
-```
+The app is deployed using Github workflows and is hosted at GitHub Pages.
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+License
+This project is open-source and available under the MIT License.
